@@ -21,6 +21,7 @@ fetchFillingDate _ (Left e) = print e
 fetchFillingDate mgr (Right r) = do
   T.putStrLn (title r)
   resp <- makeReq mgr (url r)
+  --print resp
   let rs = bulletinDetail resp
   mapM_ (either print print) rs
 

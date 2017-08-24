@@ -5,6 +5,7 @@ module Lib where
 import           Control.Monad
 import           Data.Text                  (Text)
 import qualified Data.Text                  as T
+import qualified Data.Text.Encoding                  as T
 import           Text.XML
 import           Text.XML.Cursor
 
@@ -64,7 +65,9 @@ bulletinDetail doc =
   in
     if length n2 == 1
     then genBulletinDate (head n2)
-    else [Left (ErrorResult "Cant find EB date for filling table." n1)]
+    else [Left (ErrorResult ("Cant find EB date for filling table = "
+                             `T.append`
+                             T.pack ((show $ length n1) ++ (show $ length n2)) ) n1)]
 
 
 genBulletinDate :: Cursor   -- section div
@@ -89,7 +92,7 @@ dateTd c = let tds = c $/ element "td" >=> child >=> content
 
 categoryDiv :: Cursor
             -> [Cursor]
-categoryDiv = element "div" >=> attributeIs "class" "parsys Visa_Contentpage_Category"
+categoryDiv = element "div" >=> attributeIs "class" "Visa_Contentpage_Category parsys"
 
 sectionDiv :: Cursor -> [Cursor]
 sectionDiv = element "div" >=> attributeIs "class" "simple_richtextarea section"
