@@ -21,6 +21,7 @@ library
                      , html-conduit
                      , xml-conduit
                      , text
+                     , aeson
   default-language:    Haskell2010
 
   
@@ -34,7 +35,9 @@ executable visa-bulletin
                      , html-conduit
                      , xml-conduit
                      , bytestring
+                     , aeson
                      , text
+                     , async
   default-language:    Haskell2010
 
 test-suite visa-bulletin-test
