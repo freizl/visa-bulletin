@@ -1,0 +1,444 @@
+[
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15MAY13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN12",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01SEP15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "September"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "22APR13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN12",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01SEP15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "August"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "22MAR13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN12",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01SEP15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "July"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT14",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01SEP15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "June"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "08FEB13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT14",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01SEP15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "May"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15JAN13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "15AUG14",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "April"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15DEC12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "15MAR14",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "March"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15NOV12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01OCT13",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "February"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15OCT12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "08SEP13",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "January"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "22SEP12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JUL13",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "December"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15JUL12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "15APR13",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "November"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "15FEB12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "22JAN13",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01MAR13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY14",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "October"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JUN13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "September"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JUN13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "August"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JUN13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "July"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN10",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JUN13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "June"
+    },
+    {
+        "bulletins": [
+            {
+                "bulletDate": "01SEP12",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "15AUG13",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JUN13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01MAY15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2016,
+        "month": "May"
+    }
+]
