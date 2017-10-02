@@ -14,7 +14,7 @@ main = hspec $
   describe "Find Bulletin Link" $ do
     it "returns 2 links" $ do
       xs <- fmap bulletinMain (HTML.readFile "./test/a.html")
-      length xs  `shouldBe` 186
+      length xs  `shouldBe` 21
       all isRight xs `shouldBe` True
       let rs = rights xs
       -- TODO verify all data

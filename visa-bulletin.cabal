@@ -36,6 +36,7 @@ executable visa-bulletin
                      , xml-conduit
                      , bytestring
                      , aeson
+                     , aeson-pretty
                      , text
                      , async
   default-language:    Haskell2010

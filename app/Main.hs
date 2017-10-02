@@ -2,18 +2,17 @@
 
 module Main where
 
-import           Data.Text (Text)
-import qualified Data.Text as T
-import qualified Data.Text.IO as T
+import           Control.Concurrent.Async
+import           Control.Monad
+import           Data.Aeson.Encode.Pretty (encodePretty)
+import qualified Data.ByteString.Lazy     as BS
+import           Data.Either
+import           Data.Text                (Text)
+import qualified Data.Text                as T
+import qualified Data.Text.IO             as T
 import           Network.HTTP.Conduit
-import qualified Text.HTML.DOM as HTML
-import           Text.XML hiding (writeFile)
-import Data.Either
-import Data.Aeson (encode)
-import qualified Data.ByteString.Lazy as BS
-import Control.Concurrent.Async
-import System.IO
-import Control.Monad
+import qualified Text.HTML.DOM            as HTML
+import           Text.XML                 hiding (writeFile)
 
 import           Lib
 
@@ -21,14 +20,14 @@ main :: IO ()
 main = do
   mgr <- newManager tlsManagerSettings
   resp <- makeReq mgr mainPage
-  xs <- mapConcurrently (fetchFillingDate mgr) (take 20 $ bulletinMain resp)
-  -- TODO merge errors
+  xs <- mapConcurrently (fetchFillingDate mgr) (bulletinMain resp)
+  -- TODO merge errors and friendly error format
   let rs = rights xs
   let ls = lefts xs
-  print $ length xs
-  print $ length rs
+  print $ "Total links have been fetch " ++ show (length xs)
+  print $ "Total pages having desired data " ++ show (length rs)
   unless (null ls) (writeFile "./error.log" (show ls))
-  BS.writeFile "./data.json" (encode rs)
+  BS.writeFile "./data.json" (encodePretty rs)
 
 fetchFillingDate :: Manager -> Either ErrorResult BulletinLink -> IO (Either [ErrorResult] Bulletin)
 fetchFillingDate _ (Left e) = return $ Left [e]
@@ -39,6 +38,6 @@ fetchFillingDate mgr (Right r) = do
 
 
 makeReq :: Manager -> Text -> IO Document
-makeReq mgr link = do
-  req <- parseUrlThrow (T.unpack link)
+makeReq mgr mainPageLink = do
+  req <- parseUrlThrow (T.unpack mainPageLink)
   fmap (HTML.parseLBS . responseBody) (httpLbs req mgr)

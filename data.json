@@ -2,6 +2,32 @@
     {
         "bulletins": [
             {
+                "bulletDate": "22MAY13",
+                "visaType": "EB2",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "01JAN14",
+                "visaType": "EB3",
+                "visaDateType": "FinalAction"
+            },
+            {
+                "bulletDate": "15NOV13",
+                "visaType": "EB2",
+                "visaDateType": "Filing"
+            },
+            {
+                "bulletDate": "01SEP15",
+                "visaType": "EB3",
+                "visaDateType": "Filing"
+            }
+        ],
+        "year": 2017,
+        "month": "October"
+    },
+    {
+        "bulletins": [
+            {
                 "bulletDate": "15MAY13",
                 "visaType": "EB2",
                 "visaDateType": "FinalAction"

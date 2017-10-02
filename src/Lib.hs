@@ -1,18 +1,18 @@
+{-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE DeriveGeneric #-}
 
 module Lib where
 
 import           Control.Monad
-import           Data.Text                  (Text)
-import qualified Data.Text                  as T
-import qualified Data.Text.Encoding                  as T
-import qualified Data.Text.Read                  as T
+import           Data.Aeson
+import           Data.Either
+import           Data.Text          (Text)
+import qualified Data.Text          as T
+import qualified Data.Text.Encoding as T
+import qualified Data.Text.Read     as T
+import           GHC.Generics
 import           Text.XML
 import           Text.XML.Cursor
-import Data.Either
-import Data.Aeson
-import GHC.Generics
 
 type URL = String
 
@@ -22,9 +22,9 @@ baseURL = "https://travel.state.gov"
 mainPage :: Text
 mainPage = baseURL `T.append` "/content/visas/en/law-and-policy/bulletin.html"
 
-data ErrorResult = ErrorResult { msg :: Text
+data ErrorResult = ErrorResult { msg        :: Text
                                , lastCursor :: [Cursor]
-                               } deriving (Show, Eq, Generic)
+                               } deriving (Show, Generic)
 
 data VisaType = EB2 | EB3
   deriving (Show, Eq, Generic)
@@ -33,18 +33,18 @@ data VisaDateType = FinalAction | Filing
   deriving (Show, Eq, Generic)
 
 data Bulletin = Bulletin
-  { year :: Int
-  , month :: Text
+  { year      :: Int
+  , month     :: Text
   , bulletins :: [BulletinNode]
   } deriving (Show, Eq, Generic)
 
 data BulletinNode = BulletinNode {
   visaDateType :: VisaDateType
-  , visaType :: Maybe VisaType
-  , bulletDate   :: Text
+  , visaType   :: Maybe VisaType
+  , bulletDate :: Text
   } deriving (Show, Eq, Generic)
 
-instance ToJSON ErrorResult
+--instance ToJSON ErrorResult
 instance ToJSON VisaType
 instance ToJSON VisaDateType
 instance ToJSON Bulletin
@@ -72,9 +72,14 @@ bulletinMain doc = fromDocument doc
        &| genBulletinLink)
 
 isVisaBulletinLink :: Cursor -> Bool
-isVisaBulletinLink c = let t' = attribute "title" c
-                       in
-                         length t' == 1 && "Visa Bulletin" `T.isPrefixOf` head t'
+isVisaBulletinLink c =
+  length t' == 1
+  && "Visa Bulletin" `T.isPrefixOf` head t'
+  && laterThan 2016 (head t')
+  where t' = attribute "title" c
+        laterThan n title = case T.decimal (T.takeEnd 4 title) of
+                              Right (y, _) -> y >= fromIntegral n
+                              Left _       -> False
 
 findCurrentLi :: Cursor -> [Cursor]
 findCurrentLi = element "li" >=> attributeIs "class" "current"
@@ -109,7 +114,7 @@ bulletinDetail doc =
              blefts = lefts bnodes
          in
            case ym of
-             Left l -> Left (l : blefts)
+             Left l       -> Left (l : blefts)
              Right (y, m) -> Right (Bulletin y m brights)
 
 getYearAndMonth :: Cursor    -- page title, "Visa Bulletin For November 2016"
