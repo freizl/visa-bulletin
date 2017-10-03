@@ -8,7 +8,6 @@ import           Data.Aeson               (decode)
 import           Data.Aeson.Encode.Pretty (encodePretty)
 import qualified Data.ByteString.Lazy     as BS
 import           Data.Either
-import           Data.Maybe
 import           Data.Text                (Text)
 import qualified Data.Text                as T
 import qualified Data.Text.IO             as T
@@ -21,7 +20,7 @@ import           Types
 import           WritePlot
 
 main :: IO ()
-main = writePlot
+main = writeJSON >> writePlot
 
 reportFile :: FilePath
 reportFile = "./report.json"
