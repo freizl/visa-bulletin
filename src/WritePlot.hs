@@ -44,7 +44,7 @@ chart xs = toRenderable layout
     price4 = plot_lines_values .~ [ concatMap eb3Final xs ]
            $ plot_lines_title .~ "EB3 Final"
            $ plot_lines_limit_values .~ [ [(LMin, LValue (LocalTime (fromGregorian 2009 06 1) midnight ))] ]
-           $ plot_lines_style . line_color .~ opaque lightseagreen
+           $ plot_lines_style . line_color .~ opaque orange
            $ def
 
     layout = layout_title .~ "Price History"
