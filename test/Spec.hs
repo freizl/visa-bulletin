@@ -1,11 +1,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Test.Hspec
-import qualified Text.HTML.DOM              as HTML
-import Data.Either
+import           Data.Either
+import           Test.Hspec
+import qualified Text.HTML.DOM as HTML
 
-import Fetch
-import Types
+import           Fetch
+import           Types
 
 -- import Test.QuickCheck
 -- import Control.Exception (evaluate)
