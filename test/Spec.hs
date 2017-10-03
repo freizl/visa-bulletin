@@ -4,7 +4,8 @@ import Test.Hspec
 import qualified Text.HTML.DOM              as HTML
 import Data.Either
 
-import Lib
+import Fetch
+import Types
 
 -- import Test.QuickCheck
 -- import Control.Exception (evaluate)

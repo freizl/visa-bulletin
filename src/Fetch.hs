@@ -1,7 +1,7 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Lib where
+module Fetch where
 
 import           Control.Monad
 import           Data.Aeson
@@ -14,7 +14,8 @@ import           GHC.Generics
 import           Text.XML
 import           Text.XML.Cursor
 
-type URL = String
+import           Types
+
 
 baseURL :: Text
 baseURL = "https://travel.state.gov"
@@ -26,40 +27,6 @@ data ErrorResult = ErrorResult { msg        :: Text
                                , lastCursor :: [Cursor]
                                } deriving (Show, Generic)
 
-data VisaType = EB2 | EB3
-  deriving (Show, Eq, Generic)
-
-data VisaDateType = FinalAction | Filing
-  deriving (Show, Eq, Generic)
-
-data Bulletin = Bulletin
-  { year      :: Int
-  , month     :: Text
-  , bulletins :: [BulletinNode]
-  } deriving (Show, Eq, Generic)
-
-data BulletinNode = BulletinNode {
-  visaDateType :: VisaDateType
-  , visaType   :: Maybe VisaType
-  , bulletDate :: Text
-  } deriving (Show, Eq, Generic)
-
---instance ToJSON ErrorResult
-instance ToJSON VisaType
-instance ToJSON VisaDateType
-instance ToJSON Bulletin
-instance ToJSON BulletinNode
-
-data BulletinLink = BulletinLink { title :: Text
-                                 , url   :: Text
-                                 } deriving (Show)
-
-data BulletinDate = BulletinDate { ebType :: Text
-                                 , date   :: Text
-                                 }
-
-instance Show BulletinDate where
-  show (BulletinDate t d) = "\t" ++ show t ++ ": " ++ T.unpack d
 
 bulletinMain :: Document -> [Either ErrorResult BulletinLink]
 bulletinMain doc = fromDocument doc
