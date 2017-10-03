@@ -4,14 +4,13 @@
 module WritePlot where
 
 
+import           Control.Monad
 import           Data.Text                                 (Text)
 import qualified Data.Text                                 as T
-import qualified Data.Text.Read                            as T
 import           Data.Time.Calendar
 import           Data.Time.LocalTime
-import           Graphics.Rendering.Chart.Backend.Diagrams (toFile)
+import           Graphics.Rendering.Chart.Backend.Diagrams (renderableToFile)
 import           Graphics.Rendering.Chart.Easy
-
 
 import           Types
 
@@ -20,15 +19,45 @@ data LineData = LineData
   , bulletinDate :: Day
   }
 
+
+chart :: [Bulletin] -> Renderable ()
+chart xs = toRenderable layout
+  where
+    price1 = plot_lines_values .~ [ concatMap eb2Filling xs ]
+           $ plot_lines_title .~ "EB2 Filing"
+           $ plot_lines_limit_values .~ [ [(LMin, LValue (LocalTime (fromGregorian 2009 06 1) midnight ))] ]
+           $ plot_lines_style . line_color .~ opaque blue
+           $ def
+
+    price2 = plot_lines_values .~ [ concatMap eb2Final xs ]
+           $ plot_lines_title .~ "EB2 Final"
+           $ plot_lines_limit_values .~ [ [(LMin, LValue (LocalTime (fromGregorian 2009 06 1) midnight ))] ]
+           $ plot_lines_style . line_color .~ opaque green
+           $ def
+
+    price3 = plot_lines_values .~ [ concatMap eb3Filling xs ]
+           $ plot_lines_title .~ "EB3 Filing"
+           $ plot_lines_limit_values .~ [ [(LMin, LValue (LocalTime (fromGregorian 2009 06 1) midnight ))] ]
+           $ plot_lines_style . line_color .~ opaque brown
+           $ def
+
+    price4 = plot_lines_values .~ [ concatMap eb3Final xs ]
+           $ plot_lines_title .~ "EB3 Final"
+           $ plot_lines_limit_values .~ [ [(LMin, LValue (LocalTime (fromGregorian 2009 06 1) midnight ))] ]
+           $ plot_lines_style . line_color .~ opaque lightseagreen
+           $ def
+
+    layout = layout_title .~ "Price History"
+           $ layout_plots .~ [ toPlot price1
+                             , toPlot price2
+                             , toPlot price3
+                             , toPlot price4
+                             ]
+           $ layout_grid_last .~ False
+           $ def
+
 generatePlot :: [Bulletin] -> IO ()
-generatePlot xs = do
-  mapM_ print $ concatMap eb2Filling xs
-  toFile def "report.svg" $ do
-    layout_title .= "Price History"
-    plot (line "EB2 Filling" [ concatMap eb2Filling xs ])
-    plot (line "EB2 Final" [ concatMap eb2Final xs ])
-    plot (line "EB3 Filling" [ concatMap eb3Filling xs ])
-    plot (line "EB3 Final" [ concatMap eb3Final xs ])
+generatePlot xs = void $ renderableToFile def "report.svg" $ chart xs
 
 prices :: [(Double, Double, Double)]
 prices = [ (1, 2, 3), (2, 3, 4), (4, 5, 6) ]
